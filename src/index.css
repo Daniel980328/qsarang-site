@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+body {
+  @apply bg-bodyBg text-gray-800 antialiased;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+/* Card Component */
+.card {
+  @apply bg-white rounded-lg shadow transition transform hover:-translate-y-1 border border-cardBorder overflow-hidden;
+}
+
+/* Container Utility */
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

@@ -1,5 +1,5 @@
-import emperor3 from '../assets/emperor-cordyceps3.jpg';
 import emperor2 from '../assets/emperor-cordyceps2.jpg';
+import emperor3 from '../assets/emperor-cordyceps3.jpg';
 import emperor4 from '../assets/emperor-cordyceps4.jpg';
 import emperor5 from '../assets/emperor-cordyceps5.jpg';
 

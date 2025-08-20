@@ -14,7 +14,7 @@ export default function About() {
   return (
     <main className="pt-16 space-y-16">
       {/* Banner Section */}
-      <section className="relative w-full h-[280px] md:h-[320px] rounded-lg overflow-hidden shadow-lg">
+      <section className="relative w-full h-[180px] md:h-[320px] sm:h-[400px] rounded-lg overflow-hidden shadow-lg">
         <img
           src={bannerImg}
           alt="About Banner"

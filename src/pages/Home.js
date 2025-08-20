@@ -10,7 +10,7 @@ export default function Home() {
       <div className="container mx-auto py-12">
         {/* 배너 섹션 */}
         <div className="flex justify-center mb-12">
-          <div className="relative w-full h-[500px] md:h-[400px] rounded-lg overflow-hidden ">
+          <div className="relative w-full h-[180px] sm:h-[320px] md:h-[400px] rounded-lg overflow-hidden ">
             <img
               src={banner}
               alt="Main Banner"

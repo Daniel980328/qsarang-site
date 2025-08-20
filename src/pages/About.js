@@ -2,6 +2,7 @@
 import React from 'react';
 import bannerImg from '../assets/banner.png';       // 메인 배너
 import chairmanImg from '../assets/chairman.png';  // 회장님 사진
+import { Banner } from "../components/banner"; // 배너 컴포넌트 
 
 const milestones = [
   { year: 2014, text: 'Opened first QLove™' },
@@ -12,20 +13,12 @@ const milestones = [
 
 export default function About() {
   return (
-    <main className="pt-16 space-y-16">
+    <>
       {/* Banner Section */}
-      <section className="relative w-full h-[180px] md:h-[320px] sm:h-[400px] rounded-lg overflow-hidden shadow-lg">
-        <img
-          src={bannerImg}
-          alt="About Banner"
-          className="w-full h-full object-contain object-right"
-        />
-        <div className="absolute inset-0 bg-black/5 pointer-events-none" />
-      </section>
-
+      <Banner src={bannerImg} />
 
       {/* Headquarters */}
-      <section className="container mx-auto px-4">
+      <section className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <img
             src={chairmanImg}
@@ -53,7 +46,7 @@ export default function About() {
       </section>
 
       {/* Core Values */}
-      <section className="container mx-auto px-4">
+      <section className="container mx-auto px-4 py-8">
         <h2 className="text-3xl font-semibold mb-6">Core Values</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
@@ -101,6 +94,6 @@ export default function About() {
           ))}
         </ul>
       </section>
-    </main>
+    </>
   );
 }

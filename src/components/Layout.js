@@ -7,9 +7,9 @@ export default function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow">
-        <div className="mx-auto my-8 px-4 max-w-[theme('spacing.container')]">
-        <Outlet />
+      <main className="flex-grow flex justify-center">
+        <div className="max-w-4xl w-full px-8 pt-8 flex flex-col items-center gap-8">
+          <Outlet />
         </div>
       </main>
       <Footer />

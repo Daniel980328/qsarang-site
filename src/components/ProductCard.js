@@ -9,7 +9,7 @@ export default function ProductCard({ product }) {
   return (
     <Link
       to={`/products/${product.id}`}
-      className="block bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm transition-transform transform hover:-translate-y-1 hover:shadow-lg hover:border-brandGreen"
+      className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm transition-transform transform hover:-translate-y-1 hover:shadow-lg"
     >
       <img
        src={imgSrc}

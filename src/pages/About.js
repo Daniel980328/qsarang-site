@@ -6,7 +6,7 @@ import chairmanImg from '../assets/chairman.png';  // 회장님 사진
 const milestones = [
   { year: 2014, text: 'Opened first QLove™' },
   { year: 2017, text: 'Surpassed 1,000 franchises nationwide' },
-  { year: 2020, text: 'Patented hair-growth formula; launched “Je-wang-Chung-cho”' },
+  { year: 2020, text: 'Developed patented hair-coloring formula' },
   { year: 2025, text: 'Surpassed 4,000 franchises nationwide' },
 ];
 
@@ -14,16 +14,15 @@ export default function About() {
   return (
     <main className="pt-16 space-y-16">
       {/* Banner Section */}
-      <section className="relative h-[614px] md:h-[640px]">
+      <section className="relative w-full h-[280px] md:h-[320px] rounded-lg overflow-hidden shadow-lg">
         <img
           src={bannerImg}
           alt="About Banner"
-          className="w-full h-full object-cover rounded-lg shadow-lg"
+          className="w-full h-full object-contain object-right"
         />
-        <div className="absolute inset-0 bg-black/30 rounded-lg flex items-center justify-center">
-          <h1 className="text-5xl font-bold text-white"></h1>
-        </div>
+        <div className="absolute inset-0 bg-black/5 pointer-events-none" />
       </section>
+
 
       {/* Headquarters */}
       <section className="container mx-auto px-4">
@@ -36,9 +35,9 @@ export default function About() {
           <div>
             <h2 className="text-3xl font-semibold mb-2">Headquarters</h2>
             <p className="text-gray-700 leading-relaxed">
-              <strong>QLove™ | Q Korea Co., Ltd.</strong><br/>
-              1345 Soha-dong, Gwangmyeong-si, Gyeonggi-do<br/>
-              Technopark Building E, Room 915<br/>
+              <strong>QLove™ | Q Korea Co., Ltd.</strong><br />
+              1345 Soha-dong, Gwangmyeong-si, Gyeonggi-do<br />
+              Technopark Building E, Room 915<br />
               Tel. +82-2-2038-2166
             </p>
           </div>

@@ -1,11 +1,12 @@
 // src/pages/ProductDetail.js
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import products from '../data/productsData';; // 제왕충초 제품 사진
+import products from '../data/productsData';
 
 export default function ProductDetail() {
   const { productId } = useParams();
   const product = products.find(p => p.id === productId);
+  const [selectedImage, setSelectedImage] = useState(product?.img);
 
   if (!product || productId !== 'emperor-cordyceps') {
     return (
@@ -18,29 +19,54 @@ export default function ProductDetail() {
     );
   }
 
-  const imgSrc = product.img;
-
   return (
     <main className="pt-16 pb-12 bg-bodyBg">
       <div className="container mx-auto px-4 space-y-12">
 
-        {/* 1. Hero */}
+        {/* 1. Hero Section */}
         <section className="flex flex-col lg:flex-row items-center gap-8">
-          <img
-            src={imgSrc}
-            alt={product.name}
-            className="w-full lg:w-1/3 rounded-lg shadow-lg object-cover"
-          />
+          {/* 왼쪽 이미지 갤러리 */}
+          <div className="flex flex-col gap-4 items-center lg:w-1/3">
+
+            {/* 고정 비율 이미지 박스 */}
+            <div className="
+              relative w-[350px] aspect-[4/5]
+              rounded-lg shadow-lg overflow-hidden
+              bg-white/30 backdrop-blur-sm ring-1 ring-white/40 shrink-0
+            ">
+              <img
+                src={selectedImage}
+                alt={product.name}
+                className="absolute inset-0 w-full h-full object-contain"
+              />
+            </div>
+
+            {/* 썸네일 가로 슬라이더 */}
+            <div className="flex gap-2 overflow-x-auto scrollbar-hide py-1 px-1">
+              {product.images?.map((img, idx) => (
+                <img
+                  key={idx}
+                  src={img}
+                  onClick={() => setSelectedImage(img)}
+                  className={`w-20 h-20 flex-shrink-0 object-cover rounded cursor-pointer transition ring-2 ${
+                    img === selectedImage ? 'ring-brandGreen' : 'ring-transparent'
+                  }`}
+                  alt={`Thumbnail ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* 오른쪽 텍스트 설명 */}
           <div className="lg:flex-1">
             <h1 className="text-4xl font-bold text-brandPurple mb-4">
-              Emperor Cordyceps  
+              {product.name}
               <span className="block text-lg font-medium text-gray-600">
                 Premium Culinary Cordyceps Mushroom
               </span>
             </h1>
             <p className="text-gray-700 leading-relaxed">
-              Carefully cultivated cordyceps with a deep, earthy flavor to enrich
-              your favorite dishes and beverages.
+              {product.description}
             </p>
           </div>
         </section>
@@ -85,9 +111,8 @@ export default function ProductDetail() {
             <h2 className="text-2xl font-semibold text-red-600 mb-3">⚠️ Caution</h2>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>Keep out of reach of children.</li>
-              <li> If you are pregnant, nursing, taking any medications, 
-                or have a medical condition, consult your doctor before use.</li>
-              <li>Discontinue use and consult a healthcare professional if any adverse reactions occur.</li>
+              <li>Do not use if the package is damaged.</li>
+              <li>In case of allergic reaction, stop consumption immediately.</li>
             </ul>
           </div>
           <div className="bg-white p-6 rounded-lg shadow">
@@ -103,8 +128,8 @@ export default function ProductDetail() {
           <h2 className="text-2xl font-semibold text-brandPurple">Product Details</h2>
           <p className="text-gray-700"><strong>Net Wt.</strong> 5.29 oz (150 g)</p>
           <p className="text-gray-700">
-            <strong>Distributed by</strong> Q KOREA PURIMULSAN CO. INC<br/>
-            124-125 Gyeongchung-daero 2003 beon-gil, Daewol-myeon, Icheon-si, Gyeonggi-do<br/>
+            <strong>Distributed by</strong> Q KOREA PURIMULSAN CO. INC<br />
+            124-125 Gyeongchung-daero 2003 beon-gil, Daewol-myeon, Icheon-si, Gyeonggi-do<br />
             Tel. 82-031-632-6163
           </p>
           <p className="text-gray-700"><strong>Product of</strong> South Korea</p>
@@ -113,20 +138,19 @@ export default function ProductDetail() {
         {/* 5. Back Link */}
         <div>
           <Link
-  to="/products"
-  className="inline-flex items-center gap-2 px-4 py-2
-             border border-brandGreen rounded-full
-             text-brandGreen font-semibold
-             transition-colors duration-200
-             hover:bg-brandGreen hover:text-white"
->
-  {/* 화살표 아이콘 */}
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none"
-       viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-  </svg>
-  Back to Products
-</Link>
+            to="/products"
+            className="inline-flex items-center gap-2 px-4 py-2
+              border border-brandGreen rounded-full
+              text-brandGreen font-semibold
+              transition-colors duration-200
+              hover:bg-brandGreen hover:text-white"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Products
+          </Link>
         </div>
       </div>
     </main>

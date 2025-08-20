@@ -22,3 +22,11 @@ body {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+/* Scrollbar 숨기기 */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

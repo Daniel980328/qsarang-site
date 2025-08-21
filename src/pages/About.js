@@ -26,7 +26,7 @@ export default function About() {
             className="w-48 h-48 object-cover rounded-full shadow-md"
           />
           <div>
-            <h2 className="text-3xl font-semibold mb-2">Headquarters</h2>
+            <h2 className="text-3xl font-semibold mb-2">Headquarter</h2>
             <p className="text-gray-700 leading-relaxed">
               <strong>QLove™ | Q Korea Co., Ltd.</strong><br />
               1345 Soha-dong, Gwangmyeong-si, Gyeonggi-do<br />

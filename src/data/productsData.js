@@ -8,7 +8,7 @@ const products = [
     id: 'emperor-cordyceps',
     name: 'Emperor Cordyceps',
     shortDesc: 'Premium cultivated cordyceps mushrooms for culinary use.',
-    description: `Emperor Cordyceps combines cultured Cordyceps mycelium with natural minerals to support immune function, antioxidant activity, and fatigue reduction. Take one to two packs daily for convenient health maintenance.`,
+    description: `Carefully cultivated cordyceps with a deep, earthy flavor to enrich your favorite dishes and beverages.`,
     img: emperor3, 
     images: [emperor3, emperor2, emperor4, emperor5], 
   }

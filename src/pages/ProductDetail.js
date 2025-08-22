@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import products from '../data/productsData';
+import nutritionImg from '../assets/emperor-cordyceps-nutrition.png';
 
 export default function ProductDetail() {
   const { productId } = useParams();
@@ -115,16 +116,36 @@ export default function ProductDetail() {
       </section>
 
       {/* 4. Product Details */}
-      <section className="w-full bg-white p-6 rounded-lg shadow space-y-4">
-        <h2 className="text-2xl font-semibold text-brandPurple">Product Details</h2>
-        <p className="text-gray-700"><strong>Net Wt.</strong> 5.29 oz (150 g)</p>
-        <p className="text-gray-700">
-          <strong>Distributed by</strong> Q KOREA PURIMULSAN CO. INC<br />
-          124-125 Gyeongchung-daero 2003 beon-gil, Daewol-myeon, Icheon-si, Gyeonggi-do<br />
-          Tel. 82-031-632-6163
-        </p>
-        <p className="text-gray-700"><strong>Product of</strong> South Korea</p>
-      </section>
+      {/* 4. Product Details */}
+<section className="w-full bg-white p-6 rounded-lg shadow">
+  <h2 className="text-2xl font-semibold text-brandPurple mb-4">Product Details</h2>
+
+  <div className="grid gap-6 sm:grid-cols-2 items-start">
+    {/* 왼쪽: 스펙 리스트 */}
+    <div className="space-y-2 text-gray-700">
+      <p><strong>Net Wt.</strong> 5.29 oz (150 g)</p>
+      <p>
+        <strong>Distributed by</strong> Q KOREA PURIMULSAN CO. INC<br />
+        124-125 Gyeongchung-daero 2003 beon-gil, Daewol-myeon, Icheon-si, Gyeonggi-do<br />
+        Tel. 82-031-632-6163
+      </p>
+      <p><strong>Product of</strong> South Korea</p>
+    </div>
+
+    {/* 오른쪽: 영양성분표 이미지 */}
+    <img
+      src={nutritionImg}
+      alt="Nutrition Facts label: serving size 5g, about 30 servings, 25 calories, total fat 1.5g (2% DV), total carbohydrate 0g, total sugars 0g, protein 3g."
+      className="w-full max-w-[360px] justify-self-end border border-gray-200 rounded"
+    />
+  </div>
+</section>
+
+{/* 5. Back Link (그대로 아래에) */}
+<div className="mt-4">
+  {/* 기존 Back to Products 링크 유지 */}
+</div>
+
 
       {/* 5. Back Link */}
       <div>
